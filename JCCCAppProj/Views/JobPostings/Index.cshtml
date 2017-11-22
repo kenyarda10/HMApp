@@ -1,0 +1,118 @@
+﻿@model IEnumerable<JCCCAppProj.Models.JobPosting>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employer.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOpenings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursPerWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WageSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualifications)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationInstructions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationWebsite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employer.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Industry.IndustryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOpenings)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursPerWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WageSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualifications)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationInstructions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationWebsite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JobPostingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JobPostingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JobPostingID })
+        </td>
+    </tr>
+}
+
+</table>

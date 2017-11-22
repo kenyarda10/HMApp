@@ -1,0 +1,139 @@
+﻿@model JCCCAppProj.Models.JobPosting
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Industry.IndustryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOpenings)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOpenings)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoursPerWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoursPerWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WageSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WageSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qualifications)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualifications)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationInstructions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationInstructions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationWebsite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationWebsite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JobPostingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

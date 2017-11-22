@@ -1,0 +1,51 @@
+﻿@model JCCCAppProj.Models.Employer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLog.UserLogID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLog.UserLogID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployerImageData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployerImageData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployerImageMimeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployerImageMimeType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<JCCCAppProj.Models.Employer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLog.UserLogID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployerImageData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployerImageMimeType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserLog.UserLogID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployerImageData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployerImageMimeType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployerID })
+        </td>
+    </tr>
+}
+
+</table>
