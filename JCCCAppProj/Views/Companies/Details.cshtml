@@ -1,0 +1,67 @@
+﻿@model JCCCAppProj.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Industry.IndustryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyWebsite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyWebsite)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

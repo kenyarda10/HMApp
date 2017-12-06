@@ -64,9 +64,11 @@ namespace JCCCAppProj.Models
         public bool RememberMe { get; set; }
     }
 
+  
+
     public class RegisterViewModel
     {
-        [Required]
+        
         [Display(Name = "Account Type")]
         public string UserRole { get; set; }
 
@@ -112,7 +114,7 @@ namespace JCCCAppProj.Models
         [StringLength(15)]
         [Display(Name = "Cell Phone")]
         public string PhoneNumber { get; set; }
-        
+
         [Required]
         [EmailAddress]
         [StringLength(64)]
@@ -130,9 +132,9 @@ namespace JCCCAppProj.Models
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-       
 
-        
+
+
     }
 
     public class ResetPasswordViewModel

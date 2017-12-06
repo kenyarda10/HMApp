@@ -68,6 +68,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -177,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
@@ -211,6 +216,7 @@
     <Compile Include="Models\UserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -310,6 +316,14 @@
     <Content Include="Views\UserLogs\Details.cshtml" />
     <Content Include="Views\UserLogs\Edit.cshtml" />
     <Content Include="Views\UserLogs\Index.cshtml" />
+    <Content Include="Views\JobPostings\Search.cshtml" />
+    <Content Include="Views\JobPostings\SearchDetails.cshtml" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
+    <Content Include="Views\JobPostings\JobSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

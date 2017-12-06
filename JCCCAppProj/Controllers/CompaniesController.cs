@@ -4,124 +4,122 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Globalization;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
 using JCCCAppProj.Models;
 
 namespace JCCCAppProj.Controllers
 {
-    public class EmployersController : Controller
+    public class CompaniesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Employers
+        // GET: Companies
         public ActionResult Index()
         {
-            var employers = db.Employers.Include(e => e.UserLog);
-            return View(employers.ToList());
+            var companies = db.Companies.Include(c => c.Employer).Include(c => c.Industry);
+            return View(companies.ToList());
         }
 
-        // GET: Employers/Details/5
+        // GET: Companies/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employer employer = db.Employers.Find(id);
-            if (employer == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(employer);
+            return View(company);
         }
 
-        // GET: Employers/Create
+        // GET: Companies/Create
         public ActionResult Create()
         {
-            ViewBag.UserLogID = new SelectList(db.UserLogs, "UserLogID", "UserLogID");
+            ViewBag.EmployerID = new SelectList(db.Employers, "EmployerID", "Id");
+            ViewBag.IndustryID = new SelectList(db.Industries, "IndustryID", "IndustryName");
             return View();
         }
 
-        // POST: Employers/Create
+        // POST: Companies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployerID,Id,EmployerImageData,EmployerImageMimeType,UserLogID")] Employer employer)
+        public ActionResult Create([Bind(Include = "CompanyID,CompanyName,CompanyDescription,EstablishmentDate,CompanyWebsite,EmployerID,IndustryID")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Employers.Add(employer);
+                db.Companies.Add(company);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserLogID = new SelectList(db.UserLogs, "UserLogID", "UserLogID", employer.UserLogID);
-            return View(employer);
+            ViewBag.EmployerID = new SelectList(db.Employers, "EmployerID", "Id", company.EmployerID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "IndustryID", "IndustryName", company.IndustryID);
+            return View(company);
         }
 
-        // GET: Employers/Edit/5
+        // GET: Companies/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employer employer = db.Employers.Find(id);
-            if (employer == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UserLogID = new SelectList(db.UserLogs, "UserLogID", "UserLogID", employer.UserLogID);
-            return View(employer);
+            ViewBag.EmployerID = new SelectList(db.Employers, "EmployerID", "Id", company.EmployerID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "IndustryID", "IndustryName", company.IndustryID);
+            return View(company);
         }
 
-        // POST: Employers/Edit/5
+        // POST: Companies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployerID,Id,EmployerImageData,EmployerImageMimeType,UserLogID")] Employer employer)
+        public ActionResult Edit([Bind(Include = "CompanyID,CompanyName,CompanyDescription,EstablishmentDate,CompanyWebsite,EmployerID,IndustryID")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employer).State = EntityState.Modified;
+                db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserLogID = new SelectList(db.UserLogs, "UserLogID", "UserLogID", employer.UserLogID);
-            return View(employer);
+            ViewBag.EmployerID = new SelectList(db.Employers, "EmployerID", "Id", company.EmployerID);
+            ViewBag.IndustryID = new SelectList(db.Industries, "IndustryID", "IndustryName", company.IndustryID);
+            return View(company);
         }
 
-        // GET: Employers/Delete/5
+        // GET: Companies/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employer employer = db.Employers.Find(id);
-            if (employer == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(employer);
+            return View(company);
         }
 
-        // POST: Employers/Delete/5
+        // POST: Companies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Employer employer = db.Employers.Find(id);
-            db.Employers.Remove(employer);
+            Company company = db.Companies.Find(id);
+            db.Companies.Remove(company);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -134,9 +132,5 @@ namespace JCCCAppProj.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-       
-
     }
 }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using JCCCAppProj.Models;
 using Microsoft.AspNet.Identity.Owin;
+using static JCCCAppProj.ApplicationSignInManager;
 
 namespace JCCCAppProj.Controllers
 {

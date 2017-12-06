@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using JCCCAppProj.Models;
+using static JCCCAppProj.ApplicationSignInManager;
 
 namespace JCCCAppProj.Controllers
 {
@@ -158,9 +159,7 @@ namespace JCCCAppProj.Controllers
         public ActionResult Register()
         {
 
-            ViewBag.Name = new SelectList(db.Roles.Where(u => !u.Name.Contains("Admin"))
-                                            .ToList(), "Student", "Employer");
-            return View();
+             return View();
         }
 
         //
@@ -183,7 +182,9 @@ namespace JCCCAppProj.Controllers
                     State = model.State,
                     Zip = model.Zip,
                     PhoneNumber = model.PhoneNumber,
-                    PhoneNumber2 = model.PhoneNumber2,
+                    PhoneNumber2 = model.PhoneNumber2
+                    
+                    
 
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -196,12 +197,12 @@ namespace JCCCAppProj.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    
                     //Ends Here     
                     return RedirectToAction("Index", "Home");
                 }
-                ViewBag.Name = new SelectList(db.Roles.Where(u => !u.Name.Contains("Admin"))
-                                          .ToList(), "Student", "Employer");
+                
+
                 AddErrors(result);
             }
 
@@ -209,7 +210,8 @@ namespace JCCCAppProj.Controllers
             return View(model);
         }
 
-        //
+
+         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)

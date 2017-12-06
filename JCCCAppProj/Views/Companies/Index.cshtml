@@ -1,0 +1,64 @@
+﻿@model IEnumerable<JCCCAppProj.Models.Company>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employer.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstablishmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyWebsite)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employer.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Industry.IndustryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstablishmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyWebsite)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CompanyID })
+        </td>
+    </tr>
+}
+
+</table>

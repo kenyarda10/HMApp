@@ -1,32 +1,18 @@
 ﻿@model JCCCAppProj.Models.JobPosting
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Search Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+
+
 
 <div>
-    <h4>JobPosting</h4>
+    <h2>Company Details</h2>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Employer.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Employer.Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Employer.Companies)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Employer.Companies)
-        </dd>
-
+       
         <dt>
             @Html.DisplayNameFor(model => model.Industry.IndustryName)
         </dt>
@@ -142,6 +128,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JobPostingID }) |
-    @Html.ActionLink("Back to List", "Index")
+<input class="btn btn-primary btn-lg" type="submit" value="Apply Now" /></p>
+<p>
+   
+    @Html.ActionLink("Back to List", "JobSearch")
 </p>

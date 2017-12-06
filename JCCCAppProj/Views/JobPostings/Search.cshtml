@@ -1,0 +1,86 @@
+﻿@model IEnumerable<JCCCAppProj.Models.JobPosting>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search for Jobs</h2>
+
+@using (Html.BeginForm())
+{
+    <p>Search by Major/Industry:
+
+        @Html.DropDownList("IndustriesIndustryName", null, htmlAttributes: new { @class = "form-control" })
+
+    
+       
+    <br />
+        <input class = "btn btn-primary btn-lg" type="submit" value="Search" />
+    </p>
+
+    <table class="table">
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Industry.IndustryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationWebsite)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.JobType)
+            </th>
+            <th></th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.createdDate)
+            </th>
+            <th>
+                Details
+            </th>
+            
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Industry.IndustryName)
+                </td>
+               
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+               
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationWebsite)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobType)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdDate)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Job Details", "SearchDetails", new { id = item.JobPostingID }) |
+                    
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+

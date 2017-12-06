@@ -70,6 +70,7 @@ C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\Owin.dll
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\PagedList.dll
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\PagedList.Mvc.dll
+C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\System.Linq.Dynamic.dll
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\System.Web.Helpers.dll
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\System.Web.Mvc.dll
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\System.Web.Optimization.dll
@@ -104,9 +105,9 @@ C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.dll
-C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.pdb
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.csprojResolveAssemblyReference.cache
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.Migrations.InitialCreate.resources
-C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.csproj.GenerateResource.Cache
 C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.Migrations.InitialChanges.resources
+C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.csproj.GenerateResource.Cache
+C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.dll
+C:\Users\Kenyarda\Documents\Visual Studio 2015\Projects\JCCCAppProj\JCCCAppProj\obj\Debug\JCCCAppProj.pdb

@@ -1,0 +1,72 @@
+﻿@model JCCCAppProj.ViewModel.SearchViewModel
+
+@{
+    ViewBag.Title = "JobSearch";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>JobSearch</h2>
+
+@using (Html.BeginForm("JobSearch", "JobPostings", FormMethod.Get))
+{
+    
+    <div class="row">
+
+        <div class="form-horizontal">
+            <div class="col-lg-3">
+                @Html.TextBoxFor(m => m.JobTitle, new { @class = "form-control", @placeholder = "Job Title" })
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(m => m.JobType, new { @class = "form-control", @placeholder = "Job Type" })
+                   </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control", @placeholder = "Company" })
+            </div>
+                <div class="col-lg-push-12">
+                    @Html.DropDownListFor(m => m.IndustryName, new SelectList(ViewBag.IndustriesIndustryName, "Value", "Text"),
+                   "All Categories", new { @class = "form-control", @placeholder = "Your Major/Industry" })
+
+                </div>
+                <div class="col-lg-push5">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+
+                    
+                </div>
+            </div>
+    </div>
+
+    <div style="margin-top:17px;">
+        @{
+            var grid = new WebGrid(
+                                canPage: true,
+                                rowsPerPage: Model.PageSize,
+                                canSort: true,
+                                ajaxUpdateContainerId: "grid");
+
+            grid.Bind(Model.JobPostings, rowCount: Model.TotalRecords, autoSortAndPage: false);
+            grid.Pager(WebGridPagerModes.All);
+
+            @grid.GetHtml(htmlAttributes: new { id = "grid" },
+        fillEmptyRows: false,
+        tableStyle: "table table-bordered table-hover",
+        mode: WebGridPagerModes.All,
+        columns: grid.Columns(
+              grid.Column("JobTitle", "Job Title", style: "col-lg-6"),
+              grid.Column("Industry.IndustryName", "Industry", style: "col-lg-2"),
+              //grid.Column("CompanyName", "Company", style: "col-lg-6"),
+              grid.Column("JobType", "Job Type", style: "col-lg-3"),
+              grid.Column("ApplicationWebsite", "Application Website", style: "col-lg-6"),
+              grid.Column("createdDate", "Date", style: "col - lg - 6"),
+
+              grid.Column(header: "Job Details", canSort: false, style: "action",
+                format: @<text>
+                @Html.Raw("<a data-modal='' href='/JobPostings/SearchDetails/" + item.JobPostingID + "' JobPostingID='" + item.JobPostingID + "' title='Detail'> <span class='glyphicon glyphicon-search'> </span> </a>")
+                
+                </text>)
+        ));
+        }
+    </div>
+      
+            }

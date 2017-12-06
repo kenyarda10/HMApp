@@ -9,7 +9,7 @@
 {
     @Html.AntiForgeryToken()
     <h4>Create an Account.</h4>
-    <h5> Employers click @Html.ActionLink("Here", "EmployerRegister") to register for an Employer Account</h5>
+    
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -143,11 +143,14 @@
    
 
     <div class="form-group">
-        @Html.LabelFor(m => m.UserRole, new { @class = "col - md - 2 control - label" })
+        @Html.LabelFor(m => m.UserRole, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @*@Html.DropDownList("Name")*@
-            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, " ")
-        </div>
+            <select class="form-control" name="state">
+                <option>Student </option>
+                <option>Employer </option>
+
+         </select>
+       </div>
     </div>
 
 

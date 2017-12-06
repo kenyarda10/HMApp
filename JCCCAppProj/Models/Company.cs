@@ -37,5 +37,7 @@ namespace JCCCAppProj.Models
         public virtual Employer Employer { get; set; }
 
         public virtual ICollection<CompanyLogo> CompanyLogos { get; set; }
+
+      
     }
 }

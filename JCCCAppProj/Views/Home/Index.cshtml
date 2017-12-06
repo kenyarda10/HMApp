@@ -3,29 +3,36 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h2>Job Search</h2>
+
+    <p>@Html.ActionLink("Search Here", "JobSearch", "JobPostings", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+
+   
+    
+   @* <p><a href="~/Views/JobPostings/JobSearch.cshtml" class="btn btn-primary btn-lg">Search Here &raquo;</a></p>*@
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Job Shadowing</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Do you wonder what it's like to work in your career field of choice?
+            The **** Job Shadowing program provides exposure into a career of a student's interest.
+            Students gain first-hand, real-world knowledge of a possible career path by engaging in career exploration.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://jccc.edu/student-resources/counseling/career/job-shadow.html">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Internships</h2>
+        <p>**** provides resources and support services for students and alumni in search of an internship.</p>
+        <p><a class="btn btn-default" href="http://jccc.edu/student-resources/counseling/career/jobs-internships.html">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Career Development Center</h2>
+        <p>
+            Learn what it takes to become successful in your career.
+            Our Career Development Center will assist you with the job search process through job listings, internship assistance, mock interviews, resume critiques, and more.
+        </p>
+        <p><a class="btn btn-default" href="http://jccc.edu/student-resources/counseling/career/index.html">Learn more &raquo;</a></p>
     </div>
 </div>
